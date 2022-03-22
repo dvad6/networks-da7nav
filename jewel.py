@@ -17,7 +17,7 @@ class Jewel:
 
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.setblocking(0)
-        server.bind(("127.0.0.1", port))
+        server.bind(("networks-da7nav.herokuapp.com", port))
         server.listen(50)
         inputs = [server]
         outputs = []
@@ -79,7 +79,7 @@ class Jewel:
                                 s.send(b'HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n')
                             else:
                                 size = (file_reader.head(file_path + request_fields[1], cookies))
-                                header = (f"HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Length: {size}\r\nContent-Type: {typeFile}\r\n\r\n").encode()
+                                header = (f"HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Length: {size}\r\nContent-Type: {typeFile}\r\nServer: networks-da7nav\r\n\r\n").encode()
                                 #print(header)
                                 s.send(header)
                                 #print(message)
