@@ -1,0 +1,1 @@
+The white and orange bag in the bottom right corner is an orienteering control. The picture was taken during a competition in the czech republic. 
